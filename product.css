@@ -1,0 +1,263 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+
+    background-color: #4e2403;
+}
+.navbar{
+    position: relative;
+    background-color: #431f04;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    color: rgb(255, 255, 255);
+}
+.logo{
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    padding-left: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+.nav-links{
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    text-decoration: none;
+}
+a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+a:hover{
+    color: #fa0000;
+    transition: 0.3s;
+}
+.back{
+    width: 100%;
+}
+img{
+    width: 100%;
+    height: 400px;
+}
+h2{
+    padding-top: 30px;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px;   
+  transition: background-color 0.3s, transform 0.2s; 
+
+}
+.product-container:hover{
+    transform: scale(1.05);
+}
+
+.product-box {
+  width: 180px;
+  height: 250px;
+  background-color: #6a3b14;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  
+  align-items: center;     
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    /* margin-left: 5px; */
+    text-align: center;
+}
+.product-img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
+.all{
+    display: flex;
+    justify-content: center;
+}
+
+/* Hamburger Menu Styling */
+.nav-toggle {
+  display: none; /* Hidden by default */
+}
+
+.hamburger {
+  display: none; /* Hidden on desktop */
+  cursor: pointer;
+  width: 30px;
+  height: 20px;
+  position: relative;
+  z-index: 1000;
+}
+
+.hamburger span {
+  background-color: #ffffff;
+  height: 3px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  transition: all 0.3s ease;
+}
+
+.hamburger span:nth-child(1) {
+  top: 0;
+}
+.hamburger span:nth-child(2) {
+  top: 8px;
+}
+.hamburger span:nth-child(3) {
+  top: 16px;
+}
+
+/* Hamburger Animation When Checked */
+.nav-toggle:checked + .hamburger span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 8px;
+}
+.nav-toggle:checked + .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle:checked + .hamburger span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 8px;
+}
+
+/* Mobile Menu */
+.nav-toggle:checked ~ .nav-links {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #431f04;
+  width: 100%;
+  padding: 20px;
+  z-index: 999;
+}
+
+/* 📱 Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+  /* Navbar */
+  .navbar {
+    flex-wrap: wrap;
+    padding: 15px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-links {
+    display: none; /* Hidden by default on mobile */
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .hamburger {
+    display: block; /* Show hamburger on mobile */
+  }
+
+  /* Product Container */
+  .product-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .product-box {
+    width: 90%;
+    max-width: 300px;
+    height: auto;
+    padding: 15px;
+  }
+
+  .product-img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    margin-right: 0;
+  }
+
+  /* Images */
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Headings */
+  h2 {
+    font-size: 24px;
+    padding-top: 20px;
+  }
+
+  /* Links and Logo */
+  a {
+    font-size: 16px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  /* All Container */
+  .all {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Adjustments for Smaller Screens (e.g., < 480px) */
+@media (max-width: 480px) {
+  .logo {
+    font-size: 16px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  a {
+    font-size: 14px;
+  }
+
+  .product-box {
+    max-width: 250px;
+  }
+
+  .product-img {
+    max-width: 150px;
+  }
+
+  .product-container {
+    padding: 15px;
+  }
+}
